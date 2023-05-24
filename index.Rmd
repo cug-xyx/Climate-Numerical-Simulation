@@ -1,6 +1,6 @@
 --- 
-title: "A Minimal Book Example"
-author: "John Doe"
+title: "气候数值模拟笔记"
+author: "谢宇轩"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 documentclass: book
@@ -17,7 +17,7 @@ github-repo: cug-xyx/
 
 # About
 
-![test_image](images/GLEAM_Annual_ET_spatial_pattern_2021.jpg)
+![ET空间分布](images/GLEAM_Annual_ET_spatial_pattern_2021.jpg)
 
 This is a _sample_ book written in **Markdown**. You can use anything that Pandoc's Markdown supports; for example, a math equation $a^2 + b^2 = c^2$.
 
