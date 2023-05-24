@@ -1,26 +1,26 @@
 {
-    "id": "64F74F75",
-    "path": "E:/github_repos/climateNumericalSimulation/index.Rmd",
-    "project_path": "index.Rmd",
+    "id": "85FDB048",
+    "path": "E:/github_repos/climateNumericalSimulation/clim_sim_notes.Rmd",
+    "project_path": "clim_sim_notes.Rmd",
     "type": "r_markdown",
     "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1684913434802.0,
+    "created": 1684916021500.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "25,12",
-        "scrollLine": "18"
+        "cursorPosition": "9,4",
+        "scrollLine": "12"
     },
     "folds": "",
-    "lastKnownWriteTime": 1684916352,
+    "lastKnownWriteTime": 1684916028,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1684916352860,
+    "last_content_update": 1684916028599,
     "read_only": false,
     "read_only_alternatives": []
 }

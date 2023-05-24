@@ -5,31 +5,24 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>气候数值模拟笔记</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="气候数值模拟笔记" />
   <meta property="og:type" content="book" />
-  <meta property="og:image" content="/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="github-repo" content="cug-xyx/" />
+  <meta property="og:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
+  <meta property="og:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
+  <meta name="github-repo" content="cug-xyx/Climate-Numerical-Simulation" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="气候数值模拟笔记" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
-  <meta name="twitter:image" content="/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
+  <meta name="twitter:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
+  <meta name="twitter:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
 
 <meta name="author" content="谢宇轩" />
 
 
-<meta name="date" content="2023-05-24" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -37,7 +30,7 @@ set in the _output.yml file.</p>" />
   
   
 
-<link rel="next" href="hello-bookdown.html"/>
+<link rel="next" href="cesm运行案例的流程.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -129,28 +122,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -165,46 +136,55 @@ div.csl-indent {
       <nav role="navigation">
 
 <ul class="summary">
-<li><a href="./">A Minimal Book Example</a></li>
+<li><a href="./">气候数值模拟笔记</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> About</a>
+<li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 写在前面</a>
 <ul>
-<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#usage"><i class="fa fa-check"></i><b>1.1</b> Usage</a></li>
-<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#render-book"><i class="fa fa-check"></i><b>1.2</b> Render book</a></li>
-<li class="chapter" data-level="1.3" data-path="index.html"><a href="index.html#preview-book"><i class="fa fa-check"></i><b>1.3</b> Preview book</a></li>
+<li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#代码尝试"><i class="fa fa-check"></i><b>1.1</b> 代码尝试</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#公式尝试"><i class="fa fa-check"></i><b>1.2</b> 公式尝试</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<li class="chapter" data-level="2" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html"><i class="fa fa-check"></i><b>2</b> CESM运行案例的流程</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<li class="chapter" data-level="2.1" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#create_newcase"><i class="fa fa-check"></i><b>2.1</b> create_newcase</a></li>
+<li class="chapter" data-level="2.2" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#setup"><i class="fa fa-check"></i><b>2.2</b> setup</a></li>
+<li class="chapter" data-level="2.3" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#修改参数"><i class="fa fa-check"></i><b>2.3</b> 修改参数</a></li>
+<li class="chapter" data-level="2.4" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#build"><i class="fa fa-check"></i><b>2.4</b> build</a></li>
+<li class="chapter" data-level="2.5" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#run"><i class="fa fa-check"></i><b>2.5</b> run</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="in文件.html"><a href="in文件.html"><i class="fa fa-check"></i><b>3</b> <code>*_in</code>文件</a>
 <ul>
-<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Cross-references</a>
+<li class="chapter" data-level="3.1" data-path="in文件.html"><a href="in文件.html#aatm_in大气输入参数文件"><i class="fa fa-check"></i><b>3.1</b> <code>aatm_in</code>大气输入参数文件</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="3.1.1" data-path="in文件.html"><a href="in文件.html#cam_inparm"><i class="fa fa-check"></i><b>3.1.1</b> &amp;cam_inparm</a></li>
+<li class="chapter" data-level="3.1.2" data-path="in文件.html"><a href="in文件.html#chem_surfvals_nl"><i class="fa fa-check"></i><b>3.1.2</b> &amp;chem_surfvals_nl</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
-<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<li class="chapter" data-level="3.2" data-path="in文件.html"><a href="in文件.html#lnd_in陆面输入参数文件"><i class="fa fa-check"></i><b>3.2</b> <code>lnd_in</code>陆面输入参数文件</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="输出文件.html"><a href="输出文件.html"><i class="fa fa-check"></i><b>4</b> 输出文件</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
-<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="输出文件.html"><a href="输出文件.html#查看nc文件输出变量"><i class="fa fa-check"></i><b>4.1</b> 查看nc文件输出变量</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="clone复制案例.html"><a href="clone复制案例.html"><i class="fa fa-check"></i><b>5</b> Clone复制案例</a></li>
+<li class="chapter" data-level="6" data-path="修改边界场文件文件.html"><a href="修改边界场文件文件.html"><i class="fa fa-check"></i><b>6</b> 修改边界场文件文件</a></li>
+<li class="chapter" data-level="7" data-path="地球轨道参数.html"><a href="地球轨道参数.html"><i class="fa fa-check"></i><b>7</b> 地球轨道参数</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
-<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="7.1" data-path="地球轨道参数.html"><a href="地球轨道参数.html#偏心率倾角与岁差"><i class="fa fa-check"></i><b>7.1</b> 偏心率，倾角与岁差</a></li>
+<li class="chapter" data-level="7.2" data-path="地球轨道参数.html"><a href="地球轨道参数.html#cesm中的地球轨道参数"><i class="fa fa-check"></i><b>7.2</b> CESM中的地球轨道参数</a></li>
+<li class="chapter" data-level="7.3" data-path="地球轨道参数.html"><a href="地球轨道参数.html#更改case中的轨道参数"><i class="fa fa-check"></i><b>7.3</b> 更改case中的轨道参数</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<li class="chapter" data-level="8" data-path="地形文件.html"><a href="地形文件.html"><i class="fa fa-check"></i><b>8</b> 地形文件</a></li>
+<li class="chapter" data-level="9" data-path="植被文件.html"><a href="植被文件.html"><i class="fa fa-check"></i><b>9</b> 植被文件</a></li>
+<li class="chapter" data-level="10" data-path="其它设置.html"><a href="其它设置.html"><i class="fa fa-check"></i><b>10</b> 其它设置</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
-<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
-<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="10.1" data-path="其它设置.html"><a href="其它设置.html#设置restart文件"><i class="fa fa-check"></i><b>10.1</b> 设置restart文件</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="11" data-path="其它工具.html"><a href="其它工具.html"><i class="fa fa-check"></i><b>11</b> 其它工具</a></li>
+<li class="chapter" data-level="12" data-path="作业.html"><a href="作业.html"><i class="fa fa-check"></i><b>12</b> 作业</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#section"><i class="fa fa-check"></i><b>12.1</b> 2023-05-16</a></li>
+<li class="chapter" data-level="12.2" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.2</b> 结课报告（6.17~18日）</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -228,38 +208,38 @@ div.csl-indent {
 <div id="header">
 <h1 class="title">气候数值模拟笔记</h1>
 <p class="author"><em>谢宇轩</em></p>
-<p class="date"><em>2023-05-24</em></p>
+<p class="date"><em>2023-5-24</em></p>
 </div>
-<div id="about" class="section level1 hasAnchor" number="1">
-<h1><span class="header-section-number">Chapter 1</span> About<a href="index.html#about" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<div class="figure">
-<img src="images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" alt="" />
-<p class="caption">ET空间分布</p>
+<div id="写在前面" class="section level1 hasAnchor" number="1">
+<h1><span class="header-section-number">Chapter 1</span> 写在前面<a href="index.html#写在前面" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>本笔记使用<strong>Rmarkdown</strong>记录，参考文献见末尾。<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<div id="代码尝试" class="section level2 hasAnchor" number="1.1">
+<h2><span class="header-section-number">1.1</span> 代码尝试<a href="index.html#代码尝试" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
 </div>
-<p>This is a <em>sample</em> book written in <strong>Markdown</strong>. You can use anything that Pandoc’s Markdown supports; for example, a math equation <span class="math inline">\(a^2 + b^2 = c^2\)</span>.</p>
-<div id="usage" class="section level2 hasAnchor" number="1.1">
-<h2><span class="header-section-number">1.1</span> Usage<a href="index.html#usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Each <strong>bookdown</strong> chapter is an .Rmd file, and each .Rmd file can contain one (and only one) chapter. A chapter <em>must</em> start with a first-level heading: <code># A good chapter</code>, and can contain one (and only one) first-level heading.</p>
-<p>Use second-level and higher headings within chapters like: <code>## A short section</code> or <code>### An even shorter section</code>.</p>
-<p>The <code>index.Rmd</code> file is required, and is also your first book chapter. It will be the homepage when you render the book.</p>
-</div>
-<div id="render-book" class="section level2 hasAnchor" number="1.2">
-<h2><span class="header-section-number">1.2</span> Render book<a href="index.html#render-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>You can render the HTML version of this example book without changing anything:</p>
-<ol style="list-style-type: decimal">
-<li><p>Find the <strong>Build</strong> pane in the RStudio IDE, and</p></li>
-<li><p>Click on <strong>Build Book</strong>, then select your output format, or select “All formats” if you’d like to use multiple formats from the same book source files.</p></li>
-</ol>
-<p>Or build the book from the R console:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">render_book</span>()</span></code></pre></div>
-<p>To render this example to PDF as a <code>bookdown::pdf_book</code>, you’ll need to install XeLaTeX. You are recommended to install TinyTeX (which includes XeLaTeX): <a href="https://yihui.org/tinytex/" class="uri">https://yihui.org/tinytex/</a>.</p>
-</div>
-<div id="preview-book" class="section level2 hasAnchor" number="1.3">
-<h2><span class="header-section-number">1.3</span> Preview book<a href="index.html#preview-book" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>As you work, you may start a local server to live preview this HTML book. This preview will update as you edit the book when you save individual .Rmd files. You can start the server in a work session by using the RStudio add-in “Preview book,” or from the R console:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="index.html#cb2-1" aria-hidden="true" tabindex="-1"></a>bookdown<span class="sc">::</span><span class="fu">serve_book</span>()</span></code></pre></div>
+<div id="公式尝试" class="section level2 hasAnchor" number="1.2">
+<h2><span class="header-section-number">1.2</span> 公式尝试<a href="index.html#公式尝试" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><span class="math display">\[
+PET=
+\frac{\Delta}{(\Delta+\gamma)}\frac{R_n}{\lambda}+
+\frac{\gamma}{(\Delta+\gamma)}+
+\frac{6.43\times(1+0.536U_2)VPD}{\lambda}
+\]</span></p>
 
 </div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p><a href="https://cug-hydro.github.io/CUG-HydroMeteorology/index.html#pandoc">CUG-HydroMeteorology</a><a href="index.html#fnref1" class="footnote-back">↩︎</a></p></li>
+</ol>
 </div>
             </section>
 
@@ -267,7 +247,7 @@ div.csl-indent {
         </div>
       </div>
 
-<a href="hello-bookdown.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cesm运行案例的流程.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

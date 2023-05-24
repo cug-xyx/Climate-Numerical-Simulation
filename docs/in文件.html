@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Parts | 气候数值模拟笔记</title>
+  <title>Chapter 3 *_in文件 | 气候数值模拟笔记</title>
   <meta name="description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Parts | 气候数值模拟笔记" />
+  <meta property="og:title" content="Chapter 3 *_in文件 | 气候数值模拟笔记" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
   <meta property="og:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="github-repo" content="cug-xyx/Climate-Numerical-Simulation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Parts | 气候数值模拟笔记" />
+  <meta name="twitter:title" content="Chapter 3 *_in文件 | 气候数值模拟笔记" />
   
   <meta name="twitter:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="twitter:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="cross.html"/>
-<link rel="next" href="footnotes-and-citations.html"/>
+<link rel="prev" href="cesm运行案例的流程.html"/>
+<link rel="next" href="输出文件.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -122,28 +122,6 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   
   div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 </style>
-<style type="text/css">
-/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-}
-.hanging div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}
-</style>
 
 <link rel="stylesheet" href="style.css" type="text/css" />
 </head>
@@ -164,38 +142,49 @@ div.csl-indent {
 <li class="chapter" data-level="1" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i><b>1</b> 写在前面</a>
 <ul>
 <li class="chapter" data-level="1.1" data-path="index.html"><a href="index.html#代码尝试"><i class="fa fa-check"></i><b>1.1</b> 代码尝试</a></li>
+<li class="chapter" data-level="1.2" data-path="index.html"><a href="index.html#公式尝试"><i class="fa fa-check"></i><b>1.2</b> 公式尝试</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="hello-bookdown.html"><a href="hello-bookdown.html"><i class="fa fa-check"></i><b>2</b> Hello bookdown</a>
+<li class="chapter" data-level="2" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html"><i class="fa fa-check"></i><b>2</b> CESM运行案例的流程</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="hello-bookdown.html"><a href="hello-bookdown.html#a-section"><i class="fa fa-check"></i><b>2.1</b> A section</a>
+<li class="chapter" data-level="2.1" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#create_newcase"><i class="fa fa-check"></i><b>2.1</b> create_newcase</a></li>
+<li class="chapter" data-level="2.2" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#setup"><i class="fa fa-check"></i><b>2.2</b> setup</a></li>
+<li class="chapter" data-level="2.3" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#修改参数"><i class="fa fa-check"></i><b>2.3</b> 修改参数</a></li>
+<li class="chapter" data-level="2.4" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#build"><i class="fa fa-check"></i><b>2.4</b> build</a></li>
+<li class="chapter" data-level="2.5" data-path="cesm运行案例的流程.html"><a href="cesm运行案例的流程.html#run"><i class="fa fa-check"></i><b>2.5</b> run</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="in文件.html"><a href="in文件.html"><i class="fa fa-check"></i><b>3</b> <code>*_in</code>文件</a>
 <ul>
-<li class="chapter" data-level="" data-path="hello-bookdown.html"><a href="hello-bookdown.html#an-unnumbered-section"><i class="fa fa-check"></i>An unnumbered section</a></li>
-</ul></li>
-</ul></li>
-<li class="chapter" data-level="3" data-path="cross.html"><a href="cross.html"><i class="fa fa-check"></i><b>3</b> Cross-references</a>
+<li class="chapter" data-level="3.1" data-path="in文件.html"><a href="in文件.html#aatm_in大气输入参数文件"><i class="fa fa-check"></i><b>3.1</b> <code>aatm_in</code>大气输入参数文件</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="cross.html"><a href="cross.html#chapters-and-sub-chapters"><i class="fa fa-check"></i><b>3.1</b> Chapters and sub-chapters</a></li>
-<li class="chapter" data-level="3.2" data-path="cross.html"><a href="cross.html#captioned-figures-and-tables"><i class="fa fa-check"></i><b>3.2</b> Captioned figures and tables</a></li>
+<li class="chapter" data-level="3.1.1" data-path="in文件.html"><a href="in文件.html#cam_inparm"><i class="fa fa-check"></i><b>3.1.1</b> &amp;cam_inparm</a></li>
+<li class="chapter" data-level="3.1.2" data-path="in文件.html"><a href="in文件.html#chem_surfvals_nl"><i class="fa fa-check"></i><b>3.1.2</b> &amp;chem_surfvals_nl</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="parts.html"><a href="parts.html"><i class="fa fa-check"></i><b>4</b> Parts</a></li>
-<li class="chapter" data-level="5" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html"><i class="fa fa-check"></i><b>5</b> Footnotes and citations</a>
+<li class="chapter" data-level="3.2" data-path="in文件.html"><a href="in文件.html#lnd_in陆面输入参数文件"><i class="fa fa-check"></i><b>3.2</b> <code>lnd_in</code>陆面输入参数文件</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="输出文件.html"><a href="输出文件.html"><i class="fa fa-check"></i><b>4</b> 输出文件</a>
 <ul>
-<li class="chapter" data-level="5.1" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#footnotes"><i class="fa fa-check"></i><b>5.1</b> Footnotes</a></li>
-<li class="chapter" data-level="5.2" data-path="footnotes-and-citations.html"><a href="footnotes-and-citations.html#citations"><i class="fa fa-check"></i><b>5.2</b> Citations</a></li>
+<li class="chapter" data-level="4.1" data-path="输出文件.html"><a href="输出文件.html#查看nc文件输出变量"><i class="fa fa-check"></i><b>4.1</b> 查看nc文件输出变量</a></li>
 </ul></li>
-<li class="chapter" data-level="6" data-path="blocks.html"><a href="blocks.html"><i class="fa fa-check"></i><b>6</b> Blocks</a>
+<li class="chapter" data-level="5" data-path="clone复制案例.html"><a href="clone复制案例.html"><i class="fa fa-check"></i><b>5</b> Clone复制案例</a></li>
+<li class="chapter" data-level="6" data-path="修改边界场文件文件.html"><a href="修改边界场文件文件.html"><i class="fa fa-check"></i><b>6</b> 修改边界场文件文件</a></li>
+<li class="chapter" data-level="7" data-path="地球轨道参数.html"><a href="地球轨道参数.html"><i class="fa fa-check"></i><b>7</b> 地球轨道参数</a>
 <ul>
-<li class="chapter" data-level="6.1" data-path="blocks.html"><a href="blocks.html#equations"><i class="fa fa-check"></i><b>6.1</b> Equations</a></li>
-<li class="chapter" data-level="6.2" data-path="blocks.html"><a href="blocks.html#theorems-and-proofs"><i class="fa fa-check"></i><b>6.2</b> Theorems and proofs</a></li>
-<li class="chapter" data-level="6.3" data-path="blocks.html"><a href="blocks.html#callout-blocks"><i class="fa fa-check"></i><b>6.3</b> Callout blocks</a></li>
+<li class="chapter" data-level="7.1" data-path="地球轨道参数.html"><a href="地球轨道参数.html#偏心率倾角与岁差"><i class="fa fa-check"></i><b>7.1</b> 偏心率，倾角与岁差</a></li>
+<li class="chapter" data-level="7.2" data-path="地球轨道参数.html"><a href="地球轨道参数.html#cesm中的地球轨道参数"><i class="fa fa-check"></i><b>7.2</b> CESM中的地球轨道参数</a></li>
+<li class="chapter" data-level="7.3" data-path="地球轨道参数.html"><a href="地球轨道参数.html#更改case中的轨道参数"><i class="fa fa-check"></i><b>7.3</b> 更改case中的轨道参数</a></li>
 </ul></li>
-<li class="chapter" data-level="7" data-path="sharing-your-book.html"><a href="sharing-your-book.html"><i class="fa fa-check"></i><b>7</b> Sharing your book</a>
+<li class="chapter" data-level="8" data-path="地形文件.html"><a href="地形文件.html"><i class="fa fa-check"></i><b>8</b> 地形文件</a></li>
+<li class="chapter" data-level="9" data-path="植被文件.html"><a href="植被文件.html"><i class="fa fa-check"></i><b>9</b> 植被文件</a></li>
+<li class="chapter" data-level="10" data-path="其它设置.html"><a href="其它设置.html"><i class="fa fa-check"></i><b>10</b> 其它设置</a>
 <ul>
-<li class="chapter" data-level="7.1" data-path="sharing-your-book.html"><a href="sharing-your-book.html#publishing"><i class="fa fa-check"></i><b>7.1</b> Publishing</a></li>
-<li class="chapter" data-level="7.2" data-path="sharing-your-book.html"><a href="sharing-your-book.html#pages"><i class="fa fa-check"></i><b>7.2</b> 404 pages</a></li>
-<li class="chapter" data-level="7.3" data-path="sharing-your-book.html"><a href="sharing-your-book.html#metadata-for-sharing"><i class="fa fa-check"></i><b>7.3</b> Metadata for sharing</a></li>
+<li class="chapter" data-level="10.1" data-path="其它设置.html"><a href="其它设置.html#设置restart文件"><i class="fa fa-check"></i><b>10.1</b> 设置restart文件</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="chapter" data-level="11" data-path="其它工具.html"><a href="其它工具.html"><i class="fa fa-check"></i><b>11</b> 其它工具</a></li>
+<li class="chapter" data-level="12" data-path="作业.html"><a href="作业.html"><i class="fa fa-check"></i><b>12</b> 作业</a>
+<ul>
+<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#section"><i class="fa fa-check"></i><b>12.1</b> 2023-05-16</a></li>
+<li class="chapter" data-level="12.2" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.2</b> 结课报告（6.17~18日）</a></li>
+</ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
 
@@ -216,21 +205,37 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="parts" class="section level1 hasAnchor" number="4">
-<h1><span class="header-section-number">Chapter 4</span> Parts<a href="parts.html#parts" class="anchor-section" aria-label="Anchor link to header"></a></h1>
-<p>You can add parts to organize one or more book chapters together. Parts can be inserted at the top of an .Rmd file, before the first-level chapter heading in that same file.</p>
-<p>Add a numbered part: <code># (PART) Act one {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an unnumbered part: <code># (PART\*) Act one {-}</code> (followed by <code># A chapter</code>)</p>
-<p>Add an appendix as a special kind of un-numbered part: <code># (APPENDIX) Other stuff {-}</code> (followed by <code># A chapter</code>). Chapters in an appendix are prepended with letters instead of numbers.</p>
-
+<div id="in文件" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Chapter 3</span> <code>*_in</code>文件<a href="in文件.html#in文件" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="aatm_in大气输入参数文件" class="section level2 hasAnchor" number="3.1">
+<h2><span class="header-section-number">3.1</span> <code>aatm_in</code>大气输入参数文件<a href="in文件.html#aatm_in大气输入参数文件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="cam_inparm" class="section level3 hasAnchor" number="3.1.1">
+<h3><span class="header-section-number">3.1.1</span> &amp;cam_inparm<a href="in文件.html#cam_inparm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li>bnd_topo：地形文件</li>
+</ul>
+</div>
+<div id="chem_surfvals_nl" class="section level3 hasAnchor" number="3.1.2">
+<h3><span class="header-section-number">3.1.2</span> &amp;chem_surfvals_nl<a href="in文件.html#chem_surfvals_nl" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<ul>
+<li><p>修改CO2浓度<code>co2vmr</code><strong>加倍</strong></p>
+<blockquote>
+<p>自己的case里的user_nl_cam文件</p>
+</blockquote></li>
+</ul>
+</div>
+</div>
+<div id="lnd_in陆面输入参数文件" class="section level2 hasAnchor" number="3.2">
+<h2><span class="header-section-number">3.2</span> <code>lnd_in</code>陆面输入参数文件<a href="in文件.html#lnd_in陆面输入参数文件" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-<a href="cross.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="footnotes-and-citations.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="cesm运行案例的流程.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="输出文件.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -261,7 +266,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-parts.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/clim_sim_notes.Rmd",
 "text": "Edit"
 },
 "history": {

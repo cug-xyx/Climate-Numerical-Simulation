@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Page not found | 气候数值模拟笔记</title>
+  <title>Chapter 2 CESM运行案例的流程 | 气候数值模拟笔记</title>
   <meta name="description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Page not found | 气候数值模拟笔记" />
+  <meta property="og:title" content="Chapter 2 CESM运行案例的流程 | 气候数值模拟笔记" />
   <meta property="og:type" content="book" />
   <meta property="og:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
   <meta property="og:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="github-repo" content="cug-xyx/Climate-Numerical-Simulation" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Page not found | 气候数值模拟笔记" />
+  <meta name="twitter:title" content="Chapter 2 CESM运行案例的流程 | 气候数值模拟笔记" />
   
   <meta name="twitter:description" content="中国地质大学（武汉）大气科学研究生课程《气候数值模拟》课程笔记" />
   <meta name="twitter:image" content="https://cug-xyx.github.io/Climate-Numerical-Simulation/images/GLEAM_Annual_ET_spatial_pattern_2021.jpg" />
@@ -29,8 +29,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-
+<link rel="prev" href="index.html"/>
+<link rel="next" href="in文件.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -205,19 +205,85 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="page-not-found" class="section level1">
-<h1>Page not found</h1>
-<p>The page you requested cannot be found (perhaps it was moved or renamed).</p>
-<p>You may want to try searching to find the page's new location, or use
-the table of contents to find the page you are looking for.</p>
+<div id="cesm运行案例的流程" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">Chapter 2</span> CESM运行案例的流程<a href="cesm运行案例的流程.html#cesm运行案例的流程" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="create_newcase" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> create_newcase<a href="cesm运行案例的流程.html#create_newcase" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<ul>
+<li>首先创建一个新的case：</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="cesm运行案例的流程.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/cesm1_2_2/scripts/</span>
+<span id="cb3-2"><a href="cesm运行案例的流程.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./create_newcase</span> <span class="at">-case</span> ~/xieyx/cases/<span class="op">&lt;</span>case_name<span class="op">&gt;</span> -res f19_g16 <span class="at">-compset</span> F1850 <span class="at">-mach</span> sparkle </span></code></pre></div>
+<ul>
+<li>使用<strong>预先设定的文件</strong></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="cesm运行案例的流程.html#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> ~/xiangyu/env_mach_pes.xml ./</span></code></pre></div>
+<ul>
+<li>拷贝指定<code>Macros</code>文件：</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb5-1"><a href="cesm运行案例的流程.html#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cp</span> <span class="at">-r</span> ~/xiangyu/Macros ./</span></code></pre></div>
+</div>
+<div id="setup" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> setup<a href="cesm运行案例的流程.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><code>setup</code>步骤涉及了资源申请与分配，所以要做出以下修改</p>
+<blockquote>
+<p>修改<code>env_mach_pes.xml</code>文件中<strong>180</strong>改为<strong>140</strong>（因为28核*5节点=140）</p>
+</blockquote>
+<p>setup：</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="cesm运行案例的流程.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 第一次进行setup</span></span>
+<span id="cb6-2"><a href="cesm运行案例的流程.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./cesm_setup</span></span>
+<span id="cb6-3"><a href="cesm运行案例的流程.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-4"><a href="cesm运行案例的流程.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 清除setup</span></span>
+<span id="cb6-5"><a href="cesm运行案例的流程.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./cesm_setup</span> <span class="at">-clean</span></span></code></pre></div>
+</div>
+<div id="修改参数" class="section level2 hasAnchor" number="2.3">
+<h2><span class="header-section-number">2.3</span> 修改参数<a href="cesm运行案例的流程.html#修改参数" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<blockquote>
+<p>以修改CO2浓度参数为例</p>
+</blockquote>
+<p>进入<code>user_nl_cam</code>文件，添加参数，如：</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb7-1"><a href="cesm运行案例的流程.html#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">co2vmr</span> = 280.0e-6</span></code></pre></div>
+</div>
+<div id="build" class="section level2 hasAnchor" number="2.4">
+<h2><span class="header-section-number">2.4</span> build<a href="cesm运行案例的流程.html#build" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb8-1"><a href="cesm运行案例的流程.html#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">./</span><span class="op">&lt;</span>case_name<span class="op">&gt;</span>.build</span></code></pre></div>
+</div>
+<div id="run" class="section level2 hasAnchor" number="2.5">
+<h2><span class="header-section-number">2.5</span> run<a href="cesm运行案例的流程.html#run" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="修改运行时间的参数" class="section level4 hasAnchor" number="2.5.0.1">
+<h4><span class="header-section-number">2.5.0.1</span> 修改运行时间的参数<a href="cesm运行案例的流程.html#修改运行时间的参数" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<ul>
+<li>在<code>env_run.xml</code>文件中修改<code>ndays</code>、<code>5</code></li>
+<li>PS：若第二此运行，修改<code>continue_run</code>参数为<code>TRUE</code></li>
+<li>修改<code>&lt;case_name&gt;.run</code>的运行时长不超过168</li>
+</ul>
+</div>
+<div id="提交任务" class="section level4 hasAnchor" number="2.5.0.2">
+<h4><span class="header-section-number">2.5.0.2</span> 提交任务<a href="cesm运行案例的流程.html#提交任务" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>使用<code>qsub</code>提交任务</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb9-1"><a href="cesm运行案例的流程.html#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qsub</span> ./<span class="op">&lt;</span>case_name<span class="op">&gt;</span>.run</span></code></pre></div>
+<blockquote>
+<p>可以使用<code>qstat</code>查看当前任务提交统计情况</p>
+</blockquote>
+</div>
+<div id="停止任务" class="section level4 hasAnchor" number="2.5.0.3">
+<h4><span class="header-section-number">2.5.0.3</span> 停止任务<a href="cesm运行案例的流程.html#停止任务" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb10-1"><a href="cesm运行案例的流程.html#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qdel</span></span></code></pre></div>
+</div>
+<div id="查看当前任务" class="section level4 hasAnchor" number="2.5.0.4">
+<h4><span class="header-section-number">2.5.0.4</span> 查看当前任务<a href="cesm运行案例的流程.html#查看当前任务" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<div class="sourceCode" id="cb11"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb11-1"><a href="cesm运行案例的流程.html#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">qstat</span> <span class="co"># 查看任务排队情况</span></span>
+<span id="cb11-2"><a href="cesm运行案例的流程.html#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ex">showq</span> <span class="co"># 啥看计算效率问题</span></span></code></pre></div>
+</div>
+</div>
 </div>
             </section>
 
           </div>
         </div>
       </div>
-
-
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="in文件.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -248,7 +314,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/%s",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/clim_sim_notes.Rmd",
 "text": "Edit"
 },
 "history": {
