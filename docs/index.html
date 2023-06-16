@@ -182,8 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="其它工具.html"><a href="其它工具.html"><i class="fa fa-check"></i><b>11</b> 其它工具</a></li>
 <li class="chapter" data-level="12" data-path="作业.html"><a href="作业.html"><i class="fa fa-check"></i><b>12</b> 作业</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#section"><i class="fa fa-check"></i><b>12.1</b> 2023-05-16</a></li>
-<li class="chapter" data-level="12.2" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.2</b> 结课报告（6.17~18日）</a></li>
+<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.1</b> 2023-06-18 结课报告（6.17~18日）</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -213,6 +212,10 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <div id="写在前面" class="section level1 hasAnchor" number="1">
 <h1><span class="header-section-number">Chapter 1</span> 写在前面<a href="index.html#写在前面" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>本笔记使用<strong>Rmarkdown</strong>记录，参考文献见末尾。<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a></p>
+<ul>
+<li><a href="https://github.com/cug-xyx/Climate-Numerical-Simulation">笔记仓库（github）</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/631927101">笔记创建方法（知乎）</a></li>
+</ul>
 <div id="代码尝试" class="section level2 hasAnchor" number="1.1">
 <h2><span class="header-section-number">1.1</span> 代码尝试<a href="index.html#代码尝试" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="index.html#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(mtcars)</span></code></pre></div>
@@ -226,11 +229,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="公式尝试" class="section level2 hasAnchor" number="1.2">
 <h2><span class="header-section-number">1.2</span> 公式尝试<a href="index.html#公式尝试" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>潜在蒸散发（Potential evapotranspiration，PET）公式：</p>
 <p><span class="math display">\[
 PET=
 \frac{\Delta}{(\Delta+\gamma)}\frac{R_n}{\lambda}+
-\frac{\gamma}{(\Delta+\gamma)}+
-\frac{6.43\times(1+0.536U_2)VPD}{\lambda}
+\frac{\gamma}{(\Delta+\gamma)}
+\frac{6.43\times(1+0.536U_2)VPD}{\lambda} \tag{1}
 \]</span></p>
 
 </div>

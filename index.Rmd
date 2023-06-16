@@ -1,4 +1,4 @@
---- 
+---
 title: "气候数值模拟笔记"
 author: "谢宇轩"
 date: "2023-5-24"
@@ -17,8 +17,12 @@ github-repo: cug-xyx/Climate-Numerical-Simulation
 
 # 写在前面
 
-本笔记使用**Rmarkdown**记录，参考文献见末尾。
-^[[CUG-HydroMeteorology](https://cug-hydro.github.io/CUG-HydroMeteorology/index.html#pandoc)]
+本笔记使用**Rmarkdown**记录，参考文献见末尾。 [^index-1]
+
+- [笔记仓库（github）](https://github.com/cug-xyx/Climate-Numerical-Simulation)
+- [笔记创建方法（知乎）](https://zhuanlan.zhihu.com/p/631927101)
+
+[^index-1]: [CUG-HydroMeteorology](https://cug-hydro.github.io/CUG-HydroMeteorology/index.html#pandoc)
 
 ## 代码尝试
 
@@ -28,9 +32,11 @@ head(mtcars)
 
 ## 公式尝试
 
+潜在蒸散发（Potential evapotranspiration，PET）公式：
+
 $$
 PET=
 \frac{\Delta}{(\Delta+\gamma)}\frac{R_n}{\lambda}+
-\frac{\gamma}{(\Delta+\gamma)}+
-\frac{6.43\times(1+0.536U_2)VPD}{\lambda}
+\frac{\gamma}{(\Delta+\gamma)}
+\frac{6.43\times(1+0.536U_2)VPD}{\lambda} \tag{1}
 $$

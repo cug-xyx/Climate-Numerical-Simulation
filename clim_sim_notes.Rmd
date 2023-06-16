@@ -9,6 +9,8 @@ cd ~/cesm1_2_2/scripts/
 ./create_newcase -case ~/xieyx/cases/<case_name> -res f19_g16 -compset F1850 -mach sparkle 
 ````
 
+修改`env_mach_pes.xml`文件中**180**改为**140**（因为28核*5节点=140）
+
 - 使用**预先设定的文件**
 
 ```SH
@@ -23,17 +25,13 @@ cp -r ~/xiangyu/Macros ./
 
 ## setup
 
-`setup`步骤涉及了资源申请与分配，所以要做出以下修改
-
-> 修改`env_mach_pes.xml`文件中**180**改为**140**（因为28核*5节点=140）
-
 setup：
 
 ```SH
 # 第一次进行setup
 ./cesm_setup
 
-# 清除setup
+# 清除setup的方法
 ./cesm_setup -clean
 ```
 
@@ -280,23 +278,7 @@ vi env_run.xml
 
 # 作业
 
-## 2023-05-16
-
-如何分析两倍$CO_2$实验背后的**气候效应**：
-
-```SH
-# CO2实验案例路径
-/public/home/Benkeke1/xiangyu/share/
-```
-
-涉及变量
-$$
-T2m:~TREFHT \\
-prcipitation:~PRECC+PRECL \\
-wind:~U~V~OMEGA
-$$
-
-## 结课报告（6.17~18日）
+## 2023-06-18 结课报告（6.17~18日）
 
 > 你的实验，相对参照实验，表现出什么样的气候效应？
 

@@ -182,8 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="11" data-path="其它工具.html"><a href="其它工具.html"><i class="fa fa-check"></i><b>11</b> 其它工具</a></li>
 <li class="chapter" data-level="12" data-path="作业.html"><a href="作业.html"><i class="fa fa-check"></i><b>12</b> 作业</a>
 <ul>
-<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#section"><i class="fa fa-check"></i><b>12.1</b> 2023-05-16</a></li>
-<li class="chapter" data-level="12.2" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.2</b> 结课报告（6.17~18日）</a></li>
+<li class="chapter" data-level="12.1" data-path="作业.html"><a href="作业.html#结课报告6.1718日"><i class="fa fa-check"></i><b>12.1</b> 2023-06-18 结课报告（6.17~18日）</a></li>
 </ul></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -214,6 +213,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul>
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb3-1"><a href="cesm运行案例的流程.html#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> ~/cesm1_2_2/scripts/</span>
 <span id="cb3-2"><a href="cesm运行案例的流程.html#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./create_newcase</span> <span class="at">-case</span> ~/xieyx/cases/<span class="op">&lt;</span>case_name<span class="op">&gt;</span> -res f19_g16 <span class="at">-compset</span> F1850 <span class="at">-mach</span> sparkle </span></code></pre></div>
+<p>修改<code>env_mach_pes.xml</code>文件中<strong>180</strong>改为<strong>140</strong>（因为28核*5节点=140）</p>
 <ul>
 <li>使用<strong>预先设定的文件</strong></li>
 </ul>
@@ -225,15 +225,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="setup" class="section level2 hasAnchor" number="2.2">
 <h2><span class="header-section-number">2.2</span> setup<a href="cesm运行案例的流程.html#setup" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p><code>setup</code>步骤涉及了资源申请与分配，所以要做出以下修改</p>
-<blockquote>
-<p>修改<code>env_mach_pes.xml</code>文件中<strong>180</strong>改为<strong>140</strong>（因为28核*5节点=140）</p>
-</blockquote>
 <p>setup：</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb6-1"><a href="cesm运行案例的流程.html#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 第一次进行setup</span></span>
 <span id="cb6-2"><a href="cesm运行案例的流程.html#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./cesm_setup</span></span>
 <span id="cb6-3"><a href="cesm运行案例的流程.html#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-4"><a href="cesm运行案例的流程.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 清除setup</span></span>
+<span id="cb6-4"><a href="cesm运行案例的流程.html#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 清除setup的方法</span></span>
 <span id="cb6-5"><a href="cesm运行案例的流程.html#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="ex">./cesm_setup</span> <span class="at">-clean</span></span></code></pre></div>
 </div>
 <div id="修改参数" class="section level2 hasAnchor" number="2.3">
